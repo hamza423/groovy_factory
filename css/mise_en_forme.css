@@ -1,0 +1,539 @@
+/*
+
+Mise en page de groovy factory
+
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Cookie", cursive;
+  font-size: 25px;
+  color: white;
+  margin-top: 32px;
+}
+
+h1, h2 {
+  color: #D33834;
+  font-size: 50px;
+  font-family: "Open Sans", sans-serif;
+  margin: 64px 0 32px;
+  text-align: center;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  margin: 16px 0 16px;
+  font-size: 14px;
+}
+
+h3 {
+  color: white;
+  font-size: 30px;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding: 5px;
+  top: 0%;
+}
+header .telephone {
+  margin-top: 0%;
+}
+header div {
+  padding: 15px;
+  margin-top: 1%;
+}
+header nav {
+  width: 58.3333333333%;
+}
+header nav a {
+  margin-left: 7%;
+  transition-duration: 0.5s;
+}
+header nav :hover {
+  color: #D33834;
+}
+
+.deroulant {
+  position: relative;
+  display: contents;
+  transition-duration: 0.5s;
+}
+
+.contenu_deroulant {
+  display: none;
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+  width: 6%;
+  left: 38%;
+  top: 67%;
+}
+
+.deroulant:hover .contenu_deroulant {
+  display: block;
+}
+
+.compte_smart, .menu_smart, .logo {
+  display: none;
+}
+
+.besoin_avancer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  top: 530px;
+  padding: 2%;
+}
+.besoin_avancer .aide li {
+  padding-top: 3%;
+}
+
+.recherche {
+  position: absolute;
+  top: 23%;
+  left: 28%;
+  text-align: center;
+}
+.recherche h2 {
+  color: white;
+  margin-bottom: 16px;
+}
+.recherche input[type=search] {
+  padding: 2% 40%;
+}
+.recherche input[type=submit] {
+  margin-top: 32px;
+  display: inline-block;
+  border: 2px solid #D33834;
+  padding: 8px 16px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+.recherche input[type=submit]:hover {
+  transition-duration: 0.5s;
+  background-color: white;
+  color: red;
+}
+
+.exrait {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1280px;
+  justify-content: space-between;
+  margin: 0 20% 64px;
+}
+.exrait div {
+  width: 25%;
+  margin-left: -10%;
+}
+.exrait div img {
+  transition: transform 0.2s;
+}
+.exrait div img:hover {
+  transform: scale(1.2);
+}
+.exrait div :nth-of-type(1) {
+  color: #D33834;
+  font-family: "Cookie", cursive;
+  font-size: 25px;
+}
+.exrait div :nth-of-type(2) {
+  text-align: justify;
+}
+.exrait div :nth-of-type(3) {
+  color: #D33834;
+  font-family: "Cookie", cursive;
+  font-size: 25px;
+}
+.exrait div .favorie {
+  margin-left: 88%;
+}
+.exrait div a {
+  border: 2px solid #D33834;
+  padding: 8px 16px;
+  background: transparent;
+  color: #D33834;
+  float: right;
+  margin-top: -10%;
+}
+.exrait div a:hover {
+  transition-duration: 0.5s;
+  background-color: black;
+  color: red;
+}
+
+.offre {
+  position: relative;
+}
+.offre .offre_btn_smart {
+  display: none;
+  border: 2px solid #D33834;
+  padding: 8px 16px;
+  background: transparent;
+  color: white;
+}
+.offre .offre_btn_smart:hover {
+  transition-duration: 0.5s;
+  background-color: white;
+  color: red;
+}
+.offre div {
+  position: absolute;
+  top: 0%;
+  right: 2%;
+  width: 58.3333333333%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.offre div article {
+  width: 33.3333333333%;
+  text-align: center;
+}
+.offre div p {
+  color: white;
+}
+.offre div a {
+  border: 2px solid #D33834;
+  padding: 8px 16px;
+  background: transparent;
+  color: white;
+  margin-top: 32px;
+  margin-left: 41%;
+}
+.offre div a:hover {
+  transition-duration: 0.5s;
+  background-color: white;
+  color: red;
+}
+
+.entreprise {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1280px;
+  justify-content: space-between;
+  margin-bottom: 64px;
+}
+.entreprise img {
+  transition-property: transition-duration, transform;
+}
+.entreprise img :hover {
+  transition-duration: 0.5s;
+  transform: scale(2, 0.5);
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 0 1%;
+  color: white;
+  bottom: 0%;
+}
+footer div {
+  margin-top: 2%;
+}
+footer div a {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+footer div h4 {
+  font-family: "Cookie", cursive;
+  font-size: 30px;
+  margin-bottom: 32px;
+}
+
+#newsletter {
+  right: 3%;
+  bottom: 5%;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-top: 100px;
+}
+
+/*******************************************/
+/*******************************************/
+.produit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10% 5% 64px 10%;
+}
+.produit div {
+  width: 41.6666666667%;
+  margin-right: 25%;
+}
+.produit div h2 {
+  text-align: left;
+}
+.produit div .genre {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+.produit div p {
+  font-size: 14px;
+}
+.produit div a {
+  border: 2px solid #D33834;
+  padding: 8px 16px;
+  background: transparent;
+  color: #D33834;
+  padding: 8px 16px 0% 2%;
+  margin-right: 75%;
+  display: block;
+  text-align: center;
+}
+.produit div a:hover {
+  transition-duration: 0.5s;
+  background-color: black;
+  color: red;
+}
+.produit div input[type=checkbox], .produit div label {
+  color: #D33834;
+}
+.produit div .description_smart {
+  display: none;
+}
+
+.font_produit_similaire {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.34);
+  position: relative;
+  height: 50%;
+  padding: 1%;
+}
+
+.produit_similaire {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1280px;
+  justify-content: space-between;
+  margin: 0 20% 64px;
+}
+.produit_similaire div {
+  width: 25%;
+  margin-left: -10%;
+}
+.produit_similaire div :nth-of-type(1) {
+  color: #D33834;
+  font-family: "Cookie", cursive;
+  font-size: 25px;
+}
+.produit_similaire div :nth-of-type(2) {
+  text-align: justify;
+}
+.produit_similaire div :nth-of-type(3) {
+  color: #D33834;
+  font-family: "Cookie", cursive;
+  font-size: 25px;
+}
+.produit_similaire div .favorie {
+  margin-left: 88%;
+}
+.produit_similaire div a {
+  border: 2px solid #D33834;
+  padding: 8px 16px;
+  background: transparent;
+  color: #D33834;
+  float: right;
+  margin-top: -10%;
+}
+.produit_similaire div a:hover {
+  transition-duration: 0.5s;
+  background-color: black;
+  color: red;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1280px;
+  justify-content: space-between;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+.contact div p {
+  text-align: center;
+}
+.contact form {
+  width: 41.6666666667%;
+}
+.contact form label {
+  display: table;
+  color: #D33834;
+  font-family: "Roboto", sans-serif;
+}
+.contact form input[type=text] {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 32px;
+}
+.contact form input[type=email] {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 32px;
+}
+.contact form textarea {
+  width: 80%;
+  height: 20%;
+  margin-bottom: 32px;
+}
+.contact form input[type=submit] {
+  border: 2px solid #D33834;
+  padding: 8px 16px;
+  background: transparent;
+  color: #D33834;
+  cursor: pointer;
+}
+.contact form input[type=submit]:hover {
+  transition-duration: 0.5s;
+  background-color: black;
+  color: red;
+}
+
+.presentation_contact {
+  text-align: center;
+}
+.presentation_contact h2 {
+  margin-top: 126px;
+}
+
+@media all and (max-width: 480px) {
+  .slider, .besoin_avancer, .recherche {
+    display: none;
+  }
+
+  header {
+    width: 100%;
+    padding: 10px;
+    top: 0%;
+  }
+  header a {
+    margin-top: 0;
+  }
+  header nav {
+    display: none;
+  }
+  header nav a {
+    display: none;
+  }
+  header div, header .telephone {
+    display: none;
+  }
+  header .logo {
+    display: block;
+  }
+  header .menu_smart, header .compte_smart, header .logo {
+    display: block;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .exrait {
+    width: 100%;
+  }
+  .exrait div {
+    width: 83.3333333333%;
+    margin-bottom: 64px;
+  }
+
+  .offre h1 {
+    display: none;
+  }
+  .offre .font_offre {
+    width: 100%;
+  }
+  .offre article p {
+    display: none;
+  }
+  .offre div a {
+    display: none;
+  }
+  .offre .offre_btn_smart {
+    display: block;
+    margin-left: -15%;
+  }
+
+  .entreprise {
+    width: 100%;
+  }
+
+  footer div {
+    width: 100%;
+    text-align: center;
+  }
+
+  .produit {
+    margin-top: 128px;
+  }
+  .produit div h2 {
+    font-weight: 16px;
+    margin: 32px 0% 16px 0%;
+  }
+  .produit div .genre {
+    font-weight: 14px;
+  }
+  .produit div p {
+    display: none;
+  }
+  .produit div .description_smart, .produit div a {
+    display: block;
+    margin-right: -10%;
+    margin-bottom: 16px;
+  }
+
+  .produit_similaire {
+    width: 100%;
+    margin: 0 28% 64px;
+  }
+  .produit_similaire div {
+    width: 100%;
+  }
+  .produit_similaire div .favorie {
+    margin-left: 63%;
+  }
+  .produit_similaire div p {
+    margin-right: 34%;
+  }
+  .produit_similaire div a {
+    margin: -14% 34% 0% 0%;
+  }
+}
+
+/*# sourceMappingURL=mise_en_forme.css.map */

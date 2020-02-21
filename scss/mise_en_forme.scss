@@ -1,0 +1,496 @@
+@import "mise_en_page.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//Lien
+a {
+    text-decoration: none;
+    font-family: $cookie;
+    font-size: $bouton;
+    color: white;
+    margin-top: 32px;
+}
+
+//titre
+h1, h2 {
+    color: $rouge;
+    font-size: $titre;
+    font-family: $open_sans;
+    margin: 64px 0 32px;
+    text-align: center;
+}
+p {
+    font-family: $roboto;
+    margin: 16px 0 16px;
+    font-size: $paragraphe;
+}
+h3 {
+    color: white;
+    font-size: $petit_titre;
+    font-family: $open_sans;
+}
+
+//Mise en forme de l'entete
+header {
+    @include flex;
+    background-color: $noir;
+    @include between;
+    @include fixed;
+    z-index: 1;
+    padding:5px;
+    top:0%;
+    .telephone{
+        margin-top: 0%;
+    }
+    div{
+        padding: 15px;
+        margin-top: 1%;
+    }
+    nav {
+        @include col-7;
+        a{
+            margin-left: 7%;
+            transition-duration: 0.5s;
+        }
+        :hover{
+            color:$rouge;
+        }
+    }
+}
+
+//MENU DEROULANT
+.deroulant{
+    position: relative;
+    display: contents;
+    transition-duration: 0.5s;
+}
+.contenu_deroulant{
+    display: none;
+    position: absolute;
+    background-color: black;
+    z-index: 1;
+    width: 6%;
+    left: 38%;
+    top: 67%;
+
+}
+.deroulant:hover .contenu_deroulant{
+    display: block;
+}
+
+//ICON SMARTPHONE NON AFFICHER AU FORMAT WEB 
+.compte_smart, .menu_smart, .logo{
+    display: none;
+}
+
+//BANNIERE DE PERSONALISATION DE L'EXPERIENCE
+.besoin_avancer{
+    @include flex;
+    @include around;
+    position: absolute;
+    @include col-12;
+    background-color: $noir;
+    color: white;
+    top: 530px;
+    padding: 2%;
+    .aide {
+        li{
+            padding-top: 3%; 
+        }
+    }
+}
+
+//RECHERCHE DANS LE SLIDER
+.recherche{
+    position: absolute;
+    top: 23%;
+    left: 28%;
+    text-align: center;
+    h2 {
+        color: white;
+        margin-bottom: 16px;
+    }
+    input[type="search"]{
+        padding: 2% 40%;
+    }
+    input[type="submit"]{
+        margin-top: 32px;
+        display: inline-block;
+        @include button_color_blanc;
+        cursor: pointer;
+    }
+}
+
+//MISE EN FORME DE LA SECTION EXTRAIT
+.exrait{
+    @include flex;
+    @include container;
+    @include between;
+    margin:0 20% 64px;
+    div{
+        @include col-3;
+        margin-left: -10%;
+        img{
+            transition: transform .2s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+        :nth-of-type(1){        //Titre de l'extrait
+                                color: $rouge;
+                                font-family: $cookie;
+                                font-size: $bouton;
+        }
+        :nth-of-type(2){        //Paragraphe de l'extrait
+                                text-align: justify;
+        }
+        :nth-of-type(3){    //genre de l'extrait
+                            color: $rouge;
+                            font-family: $cookie;
+                            font-size: $bouton;
+        }
+        .favorie{
+            margin-left: 88%;
+        }
+        a{
+            @include button_color_rouge;
+            float: right;
+            margin-top: -10%;
+        }
+    }
+}
+
+//MISE EN FORME DE LA SECTION DE PRESENTATION DES OFRRE DE REALISATION
+.offre{
+    position: relative;
+    .offre_btn_smart{
+        display: none;
+        @include button_color_blanc;
+    }
+    div{
+        position: absolute;
+        top:0%;
+        right:2%;
+        @include col-7;
+        @include flex;
+        article{
+            @include col-4;
+            text-align: center;
+        }
+        p{
+            color: white;
+        }
+        a{
+            @include button_color_blanc;
+            margin-top: 32px;
+            margin-left: 41%;
+        }
+
+    }
+}
+
+//MISE EN FORME DES ENTREPRISE QUI NOUS FONT CONFIANCE
+.entreprise{
+    @include flex;
+    @include container;
+    @include between;   
+    margin-bottom: 64px;
+    img{
+        transition-property: transition-duration,transform;
+        :hover{
+            transition-duration: 0.5s;
+            transform: scale(2, 0.5);
+        }
+    }
+}
+
+//MISE EN FORME DU FOOTER
+footer{
+    @include flex;
+    @include around;
+    position: relative;
+    background: $noir;
+    padding:5px 0 1%;
+    color:white;
+    bottom:0%;
+    div{
+        margin-top: 2%;
+        a{
+            font-family: $roboto;
+            font-size: $lien;
+        }
+        h4{
+            font-family: $cookie;
+            font-size: $petit_titre;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+//POSITIONNEMENT DE LA NEWSLETTER
+#newsletter{
+    right: 3%;
+    bottom: 5%;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    @include col-12;
+    height: 100%;
+    overflow: auto;
+    padding-top: 100px;
+}
+
+/*******************************************/
+//PAGE DU PRODUIT 
+/*******************************************/
+
+//MISE EN FORME DE LA SECTION DES DETAILS DU PRODUIT
+.produit{
+    @include flex;
+    @include around;
+    margin: 10% 5% 64px 10%;
+    div{
+        @include col-5;
+        margin-right: 25%;
+        h2{
+            text-align: left;
+        }
+        .genre{
+            font-size: 28px;
+            font-weight: bold;
+            font-family: $roboto;
+        }
+        p{
+            font-size:$paragraphe;
+        }
+        a{
+            @include button_color_rouge;
+            padding: 8px 16px 0% 2%;
+            margin-right: 75%;
+            display: block;
+            text-align: center;
+        }
+        input[type="checkbox"],label{
+            color: $rouge;
+        }
+        .description_smart{
+            display: none;
+        }
+    }
+}
+
+//FONT GRIS DE LA SECTION PRODUIT SIMILAIRE
+.font_produit_similaire{
+    @include col-12;
+    background-color: rgba(0, 0, 0, 0.34);
+    position: relative;
+    height: 50%;
+    padding: 1%;
+}
+
+//MISE EN FORME DES PRODUITS SIMILAIRE
+.produit_similaire{
+    @include flex;
+    @include container;
+    @include between;
+    margin:0 20% 64px;
+    div{
+        @include col-3;
+        margin-left: -10%;
+        :nth-of-type(1){
+            color: $rouge;
+            font-family: $cookie;
+            font-size: 25px;
+        }
+        :nth-of-type(2){
+            text-align: justify;
+        }
+        :nth-of-type(3){
+            color: $rouge;
+            font-family: $cookie;
+            font-size: 25px;
+        }
+        .favorie{
+            margin-left: 88%;
+        }
+        a{
+            @include button_color_rouge;
+            float: right;
+            margin-top: -10%;
+        }
+    }
+}
+
+//PAGE CONTACT
+
+//CLASS QUI VA METTRE EN FORME LE FORMULAIRE ET LA MAP
+.contact{
+    @include flex;
+    @include container;
+    @include between;
+    margin-top:64px;
+    margin-bottom:64px;
+    div{
+        p{
+            text-align: center;
+        }
+    }
+    form{
+        @include col-5;
+        label{
+            display: table;
+            color: $rouge;
+            font-family: $roboto;
+        }
+        input[type="text"]{
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 32px;
+        }
+        input[type="email"]{
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 32px;
+        }
+        textarea {
+            width: 80%;
+            height: 20%;
+            margin-bottom: 32px;
+        }
+        input[type="submit"]{
+            @include button_color_rouge;
+            cursor: pointer;
+        }
+    }
+}
+
+//centrage et positionnement de la presentation de la pages contact
+.presentation_contact{
+    text-align: center;
+    h2{
+        margin-top: 126px;
+    }
+}
+
+
+//MEDIA QUERY FORMAT SMARTPHONE
+@media all and(max-width: 480px) {
+    .slider , .besoin_avancer, .recherche{
+        display: none;
+    }
+    header{
+        @include col-12;
+        padding: 10px;
+        a{
+            margin-top: 0;
+        }
+        nav{
+            display:none;
+            a{
+                display: none;
+            }
+
+        }
+        div,.telephone{
+            display: none;
+        }
+        .logo{
+            display: block;
+
+        }
+        .menu_smart, .compte_smart, .logo {
+            display: block;
+        }
+        top: 0%;
+    }
+    h2{
+        font-size: $petit_titre;
+    }
+    .exrait{
+        @include col-12;
+        div{
+            @include col-10;
+            margin-bottom: 64px;
+        }
+    }
+    .offre{
+        h1{
+            display: none;
+        }
+        .font_offre{
+            @include col-12;
+        }
+        article{
+            p{
+                display: none;
+            }
+        }
+        div{
+            a {
+                display: none;
+            }
+        }
+        .offre_btn_smart{
+            display: block;
+            margin-left: -15%;
+        }
+    }
+    .entreprise{
+        @include col-12;
+    }
+    footer{
+        div{
+            @include col-12;
+            text-align: center;
+        }
+    }
+
+    //Page produit
+    .produit{
+        margin-top: 128px;
+        div{
+            h2{
+                font-weight: 16px;
+                margin: 32px 0% 16px 0%;
+
+            }
+            .genre{
+                font-weight: 14px;
+            }
+            p{
+                display:none;
+            }
+            .description_smart, a{
+                display: block;
+                margin-right: -10%;
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .produit_similaire{
+        @include col-12;
+        margin:0 28% 64px;
+        div{
+            @include col-12;
+            .favorie{
+                margin-left: 63%;
+            }
+            p{
+                margin-right: 34%;
+            }
+            a{
+                margin: -14% 34% 0% 0%;
+            }
+        }
+    }
+}

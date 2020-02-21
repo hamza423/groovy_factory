@@ -1,0 +1,109 @@
+/*
+
+Mise en page de groovy factory
+
+*/
+
+
+//COULEUR
+$rouge:#D33834;
+$noir: rgba(0,0,0,0.5);
+
+//POLICE
+$open_sans:'Open Sans', sans-serif;
+$roboto : 'Roboto', sans-serif;
+$cookie : 'Cookie', cursive;
+
+//TAILLE POLICE
+
+$paragraphe : 14px;
+$bouton : 25px;
+$titre: 50px;
+$petit_titre: 30px;
+$lien: 16px;
+
+//LARGEUR
+$col: 100%/12;
+
+@mixin col-2 {
+    width: $col*1;
+}
+@mixin col-3 {
+    width: $col*3;
+}
+@mixin col-4 {
+    width: $col*4;
+}
+@mixin col-5 {
+    width: $col*5;
+}
+@mixin col-6 {
+    width: $col*6;
+}
+@mixin col-7 {
+    width: $col*7;
+}
+@mixin col-8 {
+    width: $col*8;
+}
+@mixin col-9 {
+    width: $col*9;
+}
+@mixin col-10 {
+    width: $col*10;
+}
+@mixin col-11 {
+    width: $col*11;
+}
+@mixin col-12 {
+    width: $col*12;
+}
+
+//MIXIN
+
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin container {
+    margin: 0 auto;
+    width: 1280px;
+}
+
+@mixin button_color_blanc {
+    border: 2px solid $rouge;
+    padding: 8px 16px;
+    background: transparent;
+    color: white;
+    &:hover{
+        transition-duration: 0.5s;
+        background-color:white;
+        color: red;
+    }
+}
+
+@mixin button_color_rouge {
+    border: 2px solid $rouge;
+    padding: 8px 16px;
+    background: transparent;
+    color: $rouge;
+    &:hover{
+        transition-duration: 0.5s;
+        background-color:black;
+        color: red;
+    }
+}
+
+@mixin between {
+    justify-content: space-between;
+}
+
+@mixin around {
+    justify-content: space-around;
+}
+
+@mixin fixed {
+    position: fixed;
+    @include col-12;
+}
